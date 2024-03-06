@@ -10,7 +10,7 @@ body {
 
 :root {
   --primary-color: #122223;
-  --secondary-color: #F6F2F2;
+  --secondary-color: #FFF;
   --tertiary-color: #81B59F;
   --accent-color: #F2FEDC;
   --attention-color: #E03D5A;
@@ -29,12 +29,9 @@ body {
   padding-left: 5%;
 }
 
-.logo {
-  font-family: 'Bodoni Moda', serif;
-  font-size: 1.9em;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  text-decoration: none;
+.logoImg {
+  width: auto !important;
+  height: 5em !important;
 }
 
 

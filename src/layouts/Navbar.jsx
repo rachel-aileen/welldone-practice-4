@@ -8,13 +8,13 @@ export default function Navbar() {
 
     const toggleMenu = () => setIsMenuVisible(!isMenuVisible);
 
-
     return (
-
-
         <div className='navbar'>
 
-            <a className='logo' href="#home">Welldone</a>
+            {/* Replace "Welldone" with an <img> tag */}
+            <a className='logo' href="#home">
+                <img className='logoImg' src="https://firebasestorage.googleapis.com/v0/b/ally-health-obgyn.appspot.com/o/design-portfolio-logo.png?alt=media&token=50d72de4-76d4-4dc5-8d25-946fb0d5ffb4" alt="Welldone" style={{ height: '50px' }} />
+            </a>
 
             <div className='navigation'>
 
@@ -28,9 +28,7 @@ export default function Navbar() {
                     }
                 </IconButton>
 
-
-
-                <ul className={`menu ${isMenuVisible ? ' active' : 'hidden'}  `}>
+                <ul className={`menu ${isMenuVisible ? 'active' : 'hidden'}`}>
                     <li><a className='menuItem' href="#home">Home</a></li>
                     <li><a className='menuItem' href="#home">Portfolio</a></li>
                     <li><a className='menuItem' href="#home">Services</a></li>
@@ -41,6 +39,4 @@ export default function Navbar() {
             </div>
         </div >
     )
-
-
 }
