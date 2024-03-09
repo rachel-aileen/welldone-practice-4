@@ -19,41 +19,43 @@ body {
 
 /* ///////// Navbar ///////// */
 
+/* Maintain your existing navbar styles and add flex properties if not already included */
 .navbar {
   background-color: var(--secondary-color);
   height: 12vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* This ensures logo and navigation are on opposite sides */
   padding-right: 5%;
   padding-left: 5%;
 }
 
-.logoImg {
-  width: auto !important;
-  height: 5em !important;
+.navbar .navigation {
+  position: relative; /* Ensure the navigation menu is positioned relative to the IconButton */
+  display: flex; /* Align items in a row */
+  align-items: center; /* Center align the items vertically */
+  justify-content: flex-end; /* Position the navigation at the end (right side) of the navbar */
 }
-
-
 
 .navbar .navigation .menu {
-  background-color: var(--tertiary-color);
-  top: 12vh;
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  margin: 0;
-  transition: 0.6s;
-}
-
-.navbar .navigation .menu.active {
-  right: 0;
-}
-
-.navbar .navigation .menu.hidden {
-  right: -120%;
+  display: flex; /* This ensures that the menu items are laid out in a line */
+  position: absolute; /* Position the menu in relation to its nearest positioned ancestor */
+  top: 0; /* Align the top of the menu with the top of the navigation */
+  right: 0; /* Align the menu to the right side (same as DragHandle) */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  height: 100%; /* Full height to align with the navigation bar's height */
+  list-style-type: none; /* Remove bullet points from list items */
+  align-items: center; /* Align menu items vertically in the center */
+  background-color: transparent; /* No background for the inline menu */
+  transition: 0.6s; /* Smooth transition for appearance */
 }
 
 .menuItem {
+  color: var(--primary-color); /* Adjust as needed for your design */
   text-decoration: none;
+  padding: 0 15px; /* Add some space around menu items */
+  height: 100%; /* Align the link's height with the navigation bar's height */
+  display: flex; /* Use flex to vertically align text */
+  align-items: center; /* Center the text vertically */
 }
