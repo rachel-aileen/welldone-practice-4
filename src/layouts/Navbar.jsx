@@ -22,36 +22,35 @@ export default function Navbar() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Automatically hide menu and show drag handle icon when window width is less than 900px
+    // Automatically hide menu when window width is less than 900px
     useEffect(() => {
         if (windowWidth < 900) {
             setIsMenuVisible(false); // This will hide the menu
         } else {
-            setIsMenuVisible(true); // This will show the menu
+            setIsMenuVisible(false); // This will also hide the menu initially when window is greater than 900px
         }
     }, [windowWidth]); // This effect depends on windowWidth
 
     return (
         <div className='navbar'>
             <a className='logo' href="#home">
-                <img className='logoImg' src="https://firebasestorage.googleapis.com/v0/b/ally-health-obgyn.appspot.com/o/design-portfolio-logo.png?alt=media&token=50d72de4-76d4-4dc5-8d25-946fb0d5ffb4" alt="Welldone" style={{ height: '50px' }} />
+                <img className='logoImg' src="https://firebasestorage.googleapis.com/v0/b/ally-health-obgyn.appspot.com/o/design-portfolio-logo.png?alt=media&token=50d72de4-76d4-4dc5-8d25-946fb0d5ffb4" alt="Logo" style={{ height: '50px' }} />
             </a>
 
             <div className='navigation'>
                 <IconButton onClick={toggleMenu} className='menuBtn'>
-                    {!isMenuVisible &&
+                    {windowWidth < 900 && !isMenuVisible &&
                         <DragHandle className='menuIcon' />
                     }
-
-                    {isMenuVisible &&
+                    {windowWidth < 900 && isMenuVisible &&
                         <Close className='menuIcon' />
                     }
                 </IconButton>
 
-                <ul className={`menu ${isMenuVisible ? 'active' : 'hidden'}`}>
+                <ul className={`menu ${isMenuVisible || windowWidth >= 900 ? 'active' : 'hidden'}`}>
                     <li><a className='menuItem' href="#home">Home</a></li>
-                    <li><a className='menuItem' href="#home">Portfolio</a></li>
-                    <li><a className='menuItem' href="#home">Services</a></li>
+                    <li><a className='menuItem' href="#services">Services</a></li>
+                    <li><a className='menuItem' href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
