@@ -20,6 +20,11 @@ body {
 /* ///////// Navbar ///////// */
 
 /* Maintain your existing navbar styles and add flex properties if not already included */
+.logoImg {
+  width: auto !important;
+  height: 5em !important;
+}
+
 .navbar {
   background-color: var(--secondary-color);
   height: 12vh;
@@ -29,6 +34,7 @@ body {
   padding-right: 5%;
   padding-left: 5%;
 }
+
 
 .navbar .navigation {
   position: relative; /* Ensure the navigation menu is positioned relative to the IconButton */
