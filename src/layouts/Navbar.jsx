@@ -48,8 +48,8 @@ export default function Navbar() {
                 </IconButton>
 
                 <ul className={`menu ${isMenuVisible || windowWidth >= 900 ? 'active' : 'hidden'}`}>
-                    <li><a className='menuItem' href="#home">Home</a></li>
-                    <li><a className='menuItem' href="#services">Services</a></li>
+                    <li><a className='menuItem' href="#portfolio">Portfolio</a></li>
+                    <li><a className='menuItem' href="#about">About</a></li>
                     <li><a className='menuItem' href="#contact">Contact</a></li>
                 </ul>
             </div>
