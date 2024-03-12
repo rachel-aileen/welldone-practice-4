@@ -28,14 +28,16 @@ body {
   height: 4.8em !important;
 }
 
+
+
 .navbar {
   background-color: var(--secondary-color);
   height: 12vh;
   display: flex;
   align-items: center;
   justify-content: space-between; /* This ensures logo and navigation are on opposite sides */
-  padding-right: 5%;
-  padding-left: 5%;
+  padding-right: 15%;
+  padding-left: 15%;
 }
 
 
@@ -69,4 +71,6 @@ body {
   align-items: center; 
   font-family: var(--primary-font);
   font-weight: 400;
+  padding: 0 20px; /* Increase the horizontal padding */
+  
 }
