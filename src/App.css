@@ -65,12 +65,31 @@ body {
 .menuItem {
   color: var(--primary-color); 
   text-decoration: none;
-  padding: 0 15px; 
+  padding: 0 20px; /* Increase the horizontal padding */
   height: 100%; 
   display: flex; 
   align-items: center; 
   font-family: var(--primary-font);
   font-weight: 400;
-  padding: 0 20px; /* Increase the horizontal padding */
-  
+  position: relative; /* Add position relative to create a stacking context for absolute positioning */
 }
+
+.menuItem::after {
+  content: ''; /* Add a pseudo-element */
+  position: absolute; /* Position the line absolutely */
+  left: 50%; /* Center the line */
+  transform: translateX(-50%); /* Center the line */
+  bottom: -5px; /* Spacing between the link and the underline */
+  width: 50%; /* Adjust the width of the underline */
+  height: 1px; /* Height of the underline */
+  background-color: transparent; /* Initially transparent */
+  visibility: hidden; /* Initially hidden */
+  transition: visibility 0.3s, background-color 0.3s, width 0.3s; /* Smooth transition for appearance */
+}
+
+.menuItem:hover::after {
+  visibility: visible; /* Show the underline on hover */
+  background-color: var(--primary-color); /* Change the color of the underline on hover */
+}
+
+
